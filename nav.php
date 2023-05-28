@@ -12,7 +12,7 @@ include "db_conn.php";
         <li id="creNav" title="Go to creators page"><a href="#">Creators</a></li>
     </ul>
     <ul class="ulRight">
-        <li id="regNav" title="Go to register page"><a href="regter.php">Register</a></li>
+        <li id="regNav" title="Go to register page"><a href="register.php">Register</a></li>
         <li id="inNav" title="Go to login page"><a href="login.php">Login</a></li>
         <li><i class="fa-solid fa-user" id="userIcon"></i><a href="profile.php" title="Go to your profile" id="onlineUser" name="onlineUser"></a><li>
         <li id="outNav" title="Logout your account"><a href="home.php">| Logout</a></li>

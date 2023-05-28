@@ -7,18 +7,16 @@
     <link rel="shortcut icon" type="icon" href="img">
 	<link rel="icon" type="image/x-icon" href="css/img/logo1.png">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="https://kit.fontawesome.com/8ef5e4d9da.js"></script>
-    <title>DCMS | Home Page</title>
+    <title>DCMS | Login Page</title>
 </head>
 <body onload="onStart()">
 <?php
     include 'nav.php';
 ?>
-    <section>
 
-    </section>
     <script src="js/nav.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
