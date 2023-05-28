@@ -11,7 +11,14 @@
     <script src="https://kit.fontawesome.com/8ef5e4d9da.js"></script>
     <title>DCMS | Home Page</title>
 </head>
-<body>
-    
+<body onload="onStart()">
+<?php
+    include 'nav.php';
+?>
+    <section>
+
+    </section>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
