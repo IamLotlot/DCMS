@@ -1,22 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="icon" href="img">
-	<link rel="icon" type="image/x-icon" href="css/img/logo1.png">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/login.css">
-    <script src="https://kit.fontawesome.com/8ef5e4d9da.js"></script>
-    <title>DCMS | Login Page</title>
-</head>
-<body onload="onStart()">
 <?php
-    include 'nav.php';
-?>
+include "db_conn.php";
 
-    <script src="js/nav.js"></script>
-    <script src="js/login.js"></script>
-</body>
-</html>
+if (isset($_POST['signIn'])) {
+    
+    $username = $_POST['usernameL'];
+    $password = $_POST['passwordL'];
+
+    $sql1 = "SELECT * FROM `accounts` WHERE `username` = 'user1'";
+
+    $result1 = mysqli_query($conn, $sql1);
+
+    if (mysqli_num_rows($result1) > 0) {
+        echo '<script type="text/javascript">';
+        echo 'alert("Invalid username or password!");';
+        echo 'location.href = "sign.php";';
+        echo '</script>';
+
+    } else {
+                
+        echo '<script type="text/javascript">';
+        echo "localStorage.setItem('onlineUser', '$username');";
+
+        echo 'alert("User detected! Welcome '.$username.'!");';
+        echo 'window.location.href = "home.php";';
+        echo '</script>';
+    }
+} else {
+    echo '<script type="text/javascript">'; 
+    echo 'alert("Sign in failed! Try again later.");';
+    echo 'window.location.href = "sign.php";';
+    echo '</script>';
+}
+?>

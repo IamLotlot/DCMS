@@ -9,3 +9,15 @@ body{
 body::-webkit-scrollbar{
     width: 0;
 }
+.heroSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.desCol{
+    width: 50%;
+}
+.imgCol{
+    width: 50%;
+}

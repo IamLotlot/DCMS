@@ -1,58 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="icon" href="img">
-	<link rel="icon" type="image/x-icon" href="css/img/logo1.png">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/register.css">
-    <script src="https://kit.fontawesome.com/8ef5e4d9da.js"></script>
-    <title>DCMS | Register Page</title>
-</head>
-<body onload="onStart()">
 <?php
-    include 'nav.php';
-?>
-    <form action="">
-        <section>
-            <div class="divCol" id="imgCol">
-                <label id="profileLabel">Profile Picture</label>
-                <input type="file" id="profile" style="display:none;">
-                <label for="profile" id="inputImg">+</label>
-            </div>
-            <div class="divCol" id="desCol">
-                <label id="desLabel">Personal Description</label>
-                <div class="desCon">
-                    <div class="desWrap">
-                        <label for="fullname">Fullname</label>
-                        <input type="text" id="fullname">
-                        <label for="address">Address</label>
-                        <input type="text" id="address">
-                        <label for="email">Email</label>
-                        <input type="email" id="email">
-                        <label for="contact">Contact</label>
-                        <input type="email" id="contact">
-                    </div>
-                    <div class="desWrap">
-                        <label for="age">Age</label>
-                        <input type="text" id="age">
-                        <label for="sex">Sex</label>
-                        <input type="text" id="sex">
-                        <label for="sex">Sex</label>
-                        <input type="text" id="sex">
-                    </div>
-                </div>
-                <div class="desCon">
-                </div>
-            </div>
-            <div class="divCol" id="fileCol">
+include "db_conn.php";
+
+if (isset($_POST['signUp'])) {
+    
+    $username = $_POST['usernameR'];
+    $email = $_POST['emailR'];
+    $password = $_POST['passwordR'];
+
+    $sql1 = "SELECT * FROM `accounts` WHERE `username` = '$username'";
+    $sql2 = "SELECT * FROM `accounts` WHERE `email` = '$email'";
+
+    $result1 = mysqli_query($conn, $sql1);
+    $result2 = mysqli_query($conn, $sql2);
+
+    if (mysqli_num_rows($result1) > 0) {
+        echo '<script type="text/javascript">';
+        echo 'alert("Username '.$username.' is already been used");';
+        echo 'location.href = "sign.php#registerLabel";';
+        echo '</script>';
+
+    } else if (mysqli_num_rows($result2) > 0) {
+        echo '<script type="text/javascript">';
+        echo 'alert("Email '.$email.' is already been used");';
+        echo 'location.href = "sign.php#registerLabel";';
+        echo '</script>';
+
+    } else {
+
+        $sql = "INSERT INTO `accounts`(`username`, `email`, `password`, `role`) 
+                            VALUES ('$username','$email','$password','user')";
                 
-            </div>
-        </section>
-    </form>
-    <script src="js/nav.js"></script>
-    <script src="js/register.js"></script>
-</body>
-</html>
+        $result = mysqli_query($conn, $sql);
+                
+        echo '<script type="text/javascript">'; 
+        echo 'alert("'.$username.' account registered successfully!");';
+        echo 'window.location.href = "sign.php#loginLabel";';
+        echo '</script>';
+    }
+} else {
+    echo '<script type="text/javascript">'; 
+    echo 'alert("Creating an account failed! Try again later.");';
+    echo 'window.location.href = "sign.php";';
+    echo '</script>';
+}
+?>

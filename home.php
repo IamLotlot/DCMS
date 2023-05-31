@@ -15,8 +15,13 @@
 <?php
     include 'nav.php';
 ?>
-    <section>
-
+    <section class="heroSection">
+        <div class="desCol">
+            <label for></label>
+        </div>
+        <div class="imgCol">
+            <img src="css/img/hero-page.png">
+        </div>
     </section>
     <script src="js/nav.js"></script>
     <script src="js/home.js"></script>
