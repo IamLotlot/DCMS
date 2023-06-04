@@ -10,6 +10,9 @@ include "db_conn.php";
         <li id="homNav" title="Go to home page" ><a href="home.php">Home</a></li>
         <li id="appNav" title="Go to appointment page"><a href="appointment.php">Appointment</a></li>
         <li id="creNav" title="Go to creators page"><a href="#">Creators</a></li>
+        <!-- Admin Navs -->
+        <li id="accNav" title="Go to accounts page"><a href="#">Accounts</a></li>
+        <li id="logNav" title="Go to logs page"><a href="#">Logs</a></li>
     </ul>
     <ul class="ulRight">
         <li id="signNav" title="Go to account page"><a href="sign.php">Account</a></li>

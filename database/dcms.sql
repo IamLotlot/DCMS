@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 08:05 AM
+-- Generation Time: Jun 04, 2023 at 08:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -45,7 +45,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`username`, `email`, `password`, `role`, `fullname`, `address`, `contact`, `age`, `sex`, `profilePic`) VALUES
-('user1', 'user1@gmail.com', 'user1', 'user', '', '', '', '', '', '');
+('user1', 'user1@gmail.com', 'user1', 'user', '', '', '', '', '', ''),
+('admin', 'admin@gmail.com', 'admin', 'admin', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -54,12 +55,27 @@ INSERT INTO `accounts` (`username`, `email`, `password`, `role`, `fullname`, `ad
 --
 
 CREATE TABLE `appointments` (
-  `week` varchar(255) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL,
-  `customer` varchar(255) NOT NULL,
-  `tooth` varchar(255) NOT NULL,
-  `service` varchar(255) NOT NULL
+  `id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `service` varchar(255) NOT NULL,
+  `dateTime` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `log`
+--
+
+CREATE TABLE `log` (
+  `name` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `service` varchar(255) NOT NULL,
+  `dateTime` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 COMMIT;
 

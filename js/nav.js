@@ -5,7 +5,11 @@ function onStart(){
 
     //var home = document.getElementById("homNav");
     var app = document.getElementById("appNav");
-    var creators = document.getElementById("creNav");
+    var cre = document.getElementById("creNav");
+
+    var acc = document.getElementById("accNav");
+    var log = document.getElementById("logNav");
+
     var sign = document.getElementById("signNav");
     var userIcon = document.getElementById("userIcon");
     // var logout = document.getElementById("outNav");
@@ -15,7 +19,10 @@ function onStart(){
 
         if (username=="admin") {
           app.style.display = "none";
-          creators.style.display = "none";
+          cre.style.display = "none";
+
+          acc.style.display = "flex";
+          log.style.display = "flex";
   
           sign.style.display = "none";
           userIcon.style.display = "flex";
@@ -24,7 +31,10 @@ function onStart(){
   
         } else {
           app.style.display = "flex";
-          creators.style.display = "flex";
+          cre.style.display = "flex";
+
+          acc.style.display = "none";
+          log.style.display = "none";
   
           sign.style.display = "none";
           userIcon.style.display = "flex";
@@ -33,6 +43,9 @@ function onStart(){
         }
       } else {
   
+        acc.style.display = "none";
+        log.style.display = "none";
+
         sign.style.display = "flex";
         userIcon.style.display = "none";
         // logout.style.display = "none";
@@ -52,10 +65,10 @@ logout.addEventListener("click", function() {
   // Check the result
   if (result == true) {
     localStorage.removeItem('onlineUser');
-    location.reload();
     sign.style.display = "flex";
     logoutIcon.style.display = "none";
     onlineUser.style.display = "none";
     logout.style.display = "none";
+    window.location.href = "sign.php";
   }
 });
