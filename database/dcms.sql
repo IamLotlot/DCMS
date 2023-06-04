@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2023 at 06:47 PM
+-- Generation Time: Jun 04, 2023 at 08:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -46,6 +46,21 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`username`, `email`, `password`, `role`, `fullname`, `address`, `contact`, `age`, `sex`, `profilePic`) VALUES
 ('user1', 'user1@gmail.com', 'user1', 'user', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appointments`
+--
+
+CREATE TABLE `appointments` (
+  `week` varchar(255) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `customer` varchar(255) NOT NULL,
+  `tooth` varchar(255) NOT NULL,
+  `service` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,7 +13,7 @@ include "db_conn.php";
     </ul>
     <ul class="ulRight">
         <li id="signNav" title="Go to account page"><a href="sign.php">Account</a></li>
-        <li><i class="fa-solid fa-user" id="userIcon"></i><a href="profile.php" title="Go to your profile" id="onlineUser" name="onlineUser"></a><li>
-        <li id="outNav" title="Logout your account"><a href="home.php">| Logout</a></li>
+        <li><i class="fa-solid fa-user" id="userIcon"></i><a href="profile.php" title="Go to your profile" id="onlineUser" name="onlineUser"></a></li>
+        <li id="outNav" title="Logout your account"><i class="fa-solid fa-arrow-right-to-bracket" id="logoutIcon"></i><a href="home.php" id="logoutBtn" style="display:none">Logout</a></li>
     </ul>
 </nav>

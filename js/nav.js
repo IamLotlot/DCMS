@@ -8,7 +8,8 @@ function onStart(){
     var creators = document.getElementById("creNav");
     var sign = document.getElementById("signNav");
     var userIcon = document.getElementById("userIcon");
-    var logout = document.getElementById("outNav");
+    // var logout = document.getElementById("outNav");
+    var logoutIcon = document.getElementById("logoutIcon");
     
     if (username) {
 
@@ -16,27 +17,45 @@ function onStart(){
           app.style.display = "none";
           creators.style.display = "none";
   
-          //accounts.style.display = "inline-block";
-  
           sign.style.display = "none";
-          userIcon.style.display = "inline-block";
-          logout.style.display = "inline-block";
+          userIcon.style.display = "flex";
+          // logout.style.display = "none";
+          logoutIcon.style.display = "flex";
   
         } else {
-          app.style.display = "inline-block";
-          creators.style.display = "inline-block";
-  
-          //accounts.style.display = "none";
+          app.style.display = "flex";
+          creators.style.display = "flex";
   
           sign.style.display = "none";
-          userIcon.style.display = "inline-block";
-          logout.style.display = "inline-block";
+          userIcon.style.display = "flex";
+          // logout.style.display = "none";
+          logoutIcon.style.display = "flex";
         }
       } else {
-        //accounts.style.display = "none";
   
-        sign.style.display = "inline-block";
+        sign.style.display = "flex";
         userIcon.style.display = "none";
-        logout.style.display = "none";
+        // logout.style.display = "none";
+        logoutIcon.style.display = "none";
       }
 }
+
+////Logout function
+var sign = document.getElementById("signNav");
+var logoutIcon = document.getElementById("userIcon");
+var onlineUser = document.getElementById("onlineUser");
+var logout = document.getElementById("outNav");
+
+logout.addEventListener("click", function() {
+  var result = confirm("Are you sure you want to logout?");
+
+  // Check the result
+  if (result == true) {
+    localStorage.removeItem('onlineUser');
+    location.reload();
+    sign.style.display = "flex";
+    logoutIcon.style.display = "none";
+    onlineUser.style.display = "none";
+    logout.style.display = "none";
+  }
+});
