@@ -4,8 +4,86 @@
     scroll-behavior: smooth;
 }
 body{
-    background-color: #ffffff;
+    background-color: #F0ECE6;
 }
 body::-webkit-scrollbar{
     width: 0;
+}
+section{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.profileCon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profileCon img{
+    height: 16rem;
+    width: 16rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+    background-color: #C147E9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 20px 5px 5px rgba(0, 0, 0, 0.2);
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+@keyframes animate{
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+.nameCon{
+    border-radius: 2rem;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    background-color: #C147E9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    font-size: 1.5rem;
+    color: #F0ECE6;
+    font-weight: bold;
+}
+.email{
+    font-size: 1rem;
+    color: #cfcbc5;
+    font-style: italic;
+}
+.socMed{
+    width: 70%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.socMed i{
+    color: #46244a;
+    font-size: 2.5rem;
+    transition: 0.3s;
+}
+.socMed i:hover{
+    transition: 0.3s;
+    transform: scale(1.5);
 }

@@ -152,6 +152,9 @@
                         <img src="css/img/tooth.png" class="tooth" id="t2" data-info1="top left second molar"/>
                         <img src="css/img/tooth.png" class="tooth" id="t1" data-info1="top left third molar"/>
                     </div>
+                    <div class="gumsCon">
+                        <img src="css/img/gums.png" id="gum">
+                    </div>
                     <div class="topMiddleMouth">
                         <img src="css/img/tooth.png" class="tooth" id="t8" data-info1="top left central incisor"/>
                         <img src="css/img/tooth.png" class="tooth" id="t9" data-info1="top right central incisor"/>

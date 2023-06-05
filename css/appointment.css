@@ -145,7 +145,7 @@ body::-webkit-scrollbar{
   flex-direction: column;
   align-items: center;
 }
-.mouth img{
+.tooth{
   height: 2rem;
   width: 2rem;
   padding: 0;
@@ -155,7 +155,7 @@ body::-webkit-scrollbar{
   cursor: pointer;
   transition: 0.3s ease;
 }
-.mouth img:hover{
+.tooth:hover{
   height: 2.2rem;
   width: 2.2rem;
   transition: 0.3s ease;
@@ -183,6 +183,20 @@ body::-webkit-scrollbar{
 .bottomLeftMouth, .bottomRightMouth{
   display: flex;
   flex-direction: column;
+}
+.gumsCon{
+
+}
+.gumsCon img{
+  left: 12rem;
+  height: 34rem;
+  width: 35rem;
+  z-index: -1;
+  position: absolute;
+}
+#gum{
+  top: 49rem;
+  left: 7.5rem;
 }
 /* top teeth */
 #t1{
