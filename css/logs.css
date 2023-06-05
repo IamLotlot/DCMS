@@ -41,7 +41,8 @@ section{
     width: 15%;
     padding: 0.5rem 0.2rem 0.5rem 0.2rem;
     border-radius: 1rem;
-    background-color: #F0ECE6;
+    color: #F0ECE6;
+    background-color: #46244a;
     display: flex;
     align-items: center;
     justify-content: center;

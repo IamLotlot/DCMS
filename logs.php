@@ -53,38 +53,6 @@
                     }
                 }
             ?>
-            <div class="tableContent">
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label class="Success" id="state">Success</label>
-            </div>
-            <div class="tableContent">
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label class="Cancelled" id="state">Cancelled</label>
-            </div>
-            <div class="tableContent">
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label class="Success" id="state">Success</label>
-            </div>
-            <div class="tableContent">
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label>Test</label>
-                <label class="Success" id="state">Success</label>
-            </div>
         <div>
             
         </div>

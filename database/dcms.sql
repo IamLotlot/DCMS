@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 02:06 PM
+-- Generation Time: Jun 05, 2023 at 08:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -56,19 +56,25 @@ INSERT INTO `accounts` (`username`, `email`, `password`, `role`, `fullname`, `ad
 
 CREATE TABLE `appointments` (
   `id` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `position` varchar(255) NOT NULL,
   `service` varchar(255) NOT NULL,
   `dateTime` varchar(255) NOT NULL,
-  `date` varchar(255) NOT NULL
+  `date` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `appointments`
 --
 
-INSERT INTO `appointments` (`id`, `name`, `position`, `service`, `dateTime`, `date`) VALUES
-('', 'qweqwe qweqwe qwweqwwe', '(top right first molar)(top left first premolar)', 'General ', 'Wednesday 10AM-11AM', 'Jun-05-2023');
+INSERT INTO `appointments` (`id`, `username`, `name`, `position`, `service`, `dateTime`, `date`, `state`) VALUES
+('tu9', 'user', 'Mang Alberto Juan', '(bottom left third molar)', 'Orthodontics ', 'Tuesday 9AM-10AM', 'Jun-05-2023', 'Denied'),
+('fr12', 'user', 'Lexi Dee Ee-Ep-G', '(top left canine)', 'Pediatric ', 'Friday 12PM-1PM', 'Jun-05-2023', 'Denied'),
+('fr9', 'user', 'Lucy Han Reyes', '(top left first premolar)', 'Oral ', 'Friday 9AM-10AM', 'Jun-05-2023', 'Accepted'),
+('fr2', 'user', 'Albert Gonzales San Juan', '(top right second premolar)', 'Orthodontics ', 'Friday 2PM-3PM', 'Jun-05-2023', 'Denied'),
+('sa2', 'user', 'Jacob Edward Swan', '(bottom left second molar)', 'Periodontics ', 'Saturday 2PM-3PM', 'Jun-05-2023', 'Accepted');
 
 -- --------------------------------------------------------
 
@@ -90,7 +96,9 @@ CREATE TABLE `log` (
 --
 
 INSERT INTO `log` (`name`, `position`, `service`, `dateCreated`, `dateEnd`, `state`) VALUES
-('Juan Pollen Luna', 'upper left canine', 'General', 'Jun-05-2023', 'Jun-05-2023', 'Success');
+('Juan Pollen Luna', 'upper left canine', 'General', 'Jun-05-2023', 'Jun-05-2023', 'Success'),
+('John Chris Topher', '(top right second premolar)', 'Pediatric ', 'Jun-05-2023', 'Jun-06-2023', 'Success'),
+('Juan Lapo Henhen', '(bottom left second premolar)', 'Pediatric ', 'Jun-05-2023', 'Jun-05-2023', 'Failed');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

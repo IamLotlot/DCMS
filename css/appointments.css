@@ -41,7 +41,8 @@ section{
     width: 15%;
     padding: 0.5rem 0.2rem 0.5rem 0.2rem;
     border-radius: 1rem;
-    background-color: #F0ECE6;
+    color: #F0ECE6;
+    background-color: #46244a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,13 +66,32 @@ section{
     align-items: center;
     justify-content: center;
 }
+.tableContent a{
+    text-decoration: none;
+}
+#acceptLabel, #successLabel{
+    color: #3B3141;
+}
+#denyLabel, #failedLabel{
+    color: #F0ECE6;
+}
 .buttons{
+    width: 4rem;
     padding: 0.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
 }
-#confirmBtn{
+#acceptBtn, #successBtn{
     background-color: #72EF36;
+    color: #3B3141;
 }
-#denyBtn{
+#denyBtn, #failedBtn{
     background-color: #ff1717;
-    
+    color: #F0ECE6;
+}
+#pendingApp, #onProgressApp{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #3B3141;
 }

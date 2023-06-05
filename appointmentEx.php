@@ -12,16 +12,9 @@ include "db_conn.php";
         $service = implode(", ", $selectedServices);
     }
 
-    if (isset($_GET['dataID'])) {
-        $dataID = $_GET['dataID'];
-        $dataID = $_SESSION['dataID'] = $dataID;
-    } else {
-        echo "Session data 'dataID' not found.";
-    }
-
     $date = date('M-d-Y', strtotime('now'));
 
-    $data = $_POST['dataInfo'];
+    $dateID = $_POST['dateID'];
 
     $fName = $_POST['fName'];
     $lName = $_POST['lName'];
@@ -68,8 +61,8 @@ include "db_conn.php";
 
     } else {
 
-        $sql = "INSERT INTO `appointments`(`id`,`name`, `position`, `service`, `dateTime`, `date`) 
-                VALUES ('$dataID','$name','$position','$service','$dateTime','$date')";
+        $sql = "INSERT INTO `appointments`(`id`,`name`, `position`, `service`, `dateTime`, `date`, `state`) 
+                VALUES ('$dateID','$name','$position','$service','$dateTime','$date','Pending')";
 
         $result = mysqli_query($conn, $sql);
         
@@ -78,8 +71,6 @@ include "db_conn.php";
         unset($_SESSION['year']);
         unset($_SESSION['week']);
         unset($_SESSION['service']);
-        
-        unset($_SESSION['dataID']);
 
         echo '<script type="text/javascript">'; 
         echo 'alert("Successfully created an appointment!");';

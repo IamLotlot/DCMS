@@ -10,5 +10,4 @@ function setColors() {
     for (var i = 0; i <failed.length; i++){
         failed[i].style.color = "#ff1717";
     }
-    
 }

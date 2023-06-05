@@ -3,7 +3,7 @@ function onStart(){
     var username = localStorage.getItem('onlineUser');
     document.getElementById("onlineUser").innerHTML = username;
 
-    //var home = document.getElementById("homNav");
+    var home = document.getElementById("homNav");
     var app = document.getElementById("appNav");
     var cre = document.getElementById("creNav");
 
@@ -19,6 +19,7 @@ function onStart(){
     if (username) {
 
         if (username=="admin") {
+          home.style.display = "none";
           app.style.display = "none";
           cre.style.display = "none";
 
@@ -32,6 +33,7 @@ function onStart(){
           logoutIcon.style.display = "flex";
   
         } else {
+          home.style.display = "flex";
           app.style.display = "flex";
           cre.style.display = "flex";
 

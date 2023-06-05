@@ -14,8 +14,10 @@
 <body onload="onStart(); setColors()">
 <?php
     include 'nav.php';
+    include 'db_conn.php';
 ?>
     <section>
+        <h1 id="pendingApp">Pending Appointments</h1>
         <div class="tableHeader">
             <label>Name</label>
             <label>Position</label>
@@ -27,12 +29,13 @@
         <div class="table">
             <?php
 
-                $sql = "SELECT * FROM `appointments`";
+                $sql = "SELECT * FROM `appointments` WHERE `state` = 'Pending'";
 
                 $result = mysqli_query($conn, $sql);
 
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
                         $name = $row['name'];
                         $position = $row['position'];
                         $service = $row['service'];
@@ -41,14 +44,62 @@
 
                         echo '
                         <div class="tableContent">
+                            <label style="display:none">'.$id.'</label>
                             <label>'.$name.'</label>
                             <label>'.$position.'</label>
                             <label>'.$service.'</label>
                             <label>'.$dateCreated.'</label>
                             <label>'.$dateEnd.'</label>
                             <div>
-                                <button type="submit" class="buttons" id="confirmBtn">Confirm</button>
-                                <button type="submit" class="buttons" id="denyBtn">Deny</button>
+                                <button class="buttons" id="acceptBtn"><a id="acceptLabel" href="accept.php?acceptId='.$id.'">Accept</a></button>
+                                <button class="buttons" id="denyBtn"><a id="denyLabel" href="deny.php?denyId='.$id.'"">Deny</a></button>
+                            </div>
+                        </div>
+                        ';
+                    }
+                }
+            ?>
+        <div>
+            
+        </div>
+    </section>
+    <section>
+        <h1 id="onProgressApp">On Progress Appointments</h1>
+        <div class="tableHeader">
+            <label>Name</label>
+            <label>Position</label>
+            <label>Service</label>
+            <label>Date Scheduled</label>
+            <label>Date Created</label>
+            <label>State</label>
+        </div>
+        <div class="table">
+            <?php
+
+                $sql = "SELECT * FROM `appointments` WHERE `state` = 'Accepted'";
+
+                $result = mysqli_query($conn, $sql);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $name = $row['name'];
+                        $position = $row['position'];
+                        $service = $row['service'];
+                        $dateCreated = $row['dateTime'];
+                        $dateEnd = $row['date'];
+
+                        echo '
+                        <div class="tableContent">
+                            <label style="display:none">'.$id.'</label>
+                            <label>'.$name.'</label>
+                            <label>'.$position.'</label>
+                            <label>'.$service.'</label>
+                            <label>'.$dateCreated.'</label>
+                            <label>'.$dateEnd.'</label>
+                            <div>
+                                <button class="buttons" id="successBtn"><a id="successLabel" href="success.php?successId='.$id.'">Success</a></button>
+                                <button class="buttons" id="failedBtn"><a id="failedLabel" href="failed.php?failedId='.$id.'"">Failed</a></button>
                             </div>
                         </div>
                         ';

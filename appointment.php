@@ -11,12 +11,12 @@
     <script src="https://kit.fontawesome.com/8ef5e4d9da.js"></script>
     <title>DCMS | Appointment Page</title>
 </head>
-<body onload="onStart(); getCurrentDay(); cancelApp()">
+<body onload="onStart(); getCurrentDay(); cancelApp(); setColors(); reservedDates()">
 <?php
     include 'nav.php';
-    include "db_conn.php";
+    include 'db_conn.php';
 
-    $sql = "SELECT `dateTime` FROM `appointments`";
+    $sql = "SELECT `id` FROM `appointments` WHERE `state` = 'Accepted'";
 	
 	$result = mysqli_query($conn, $sql);
 	
@@ -24,8 +24,11 @@
 
 		while ($row = mysqli_fetch_assoc($result)) {
 
-			$dateTime = $row['dateTime'];
-            $_SESSION['myValue'] = $dateTime;
+			$id = $row['id'];
+
+            echo '
+				<input type="text" class="reservedDate" value="'.$id.'" style="display:none" disabled>
+                ';
 		}
 	}
 ?>
@@ -38,11 +41,11 @@
                     <label id="year"></label>
                 </div>
                 <div class="centerHeader">
-                    <i class="fa-solid fa-chevron-left" id="leftIcon"></i>
-                    <h1>This Week</h1>
-                    <h1 style="display:none">Next Week</h1>
-                    <h1 style="display:none">Week After Another</h1>
+                    <i class="fa-solid fa-chevron-left" id="lastLeftIcon" style="display:none"></i>
+                    <i class="fa-solid fa-chevron-left" id="leftIcon" style="visibility:hidden"></i>
+                    <h1 id="weekLabel">This Week</h1>
                     <i class="fa-solid fa-chevron-right" id="rightIcon"></i>
+                    <i class="fa-solid fa-chevron-right" id="lastRightIcon" style="display:none"></i>
                 </div>
                 <div class="sideHeader">
                     
@@ -136,7 +139,7 @@
             </div>
         </div>
     </section>
-    <section class="second">
+    <section class="second" id="secondSec">
         <div class="mouth">
             <h2 id="topMouthLabel">Top Mouth</h2>
                 <div class="topMouth">
@@ -194,6 +197,8 @@
             <form action="appointmentEx.php" method="post" enctype="multipart/form-data" id="desForm">
                 <div class="desCon">
                     <div class="desWrapper">
+                        <input class="inputField" type="text" id="weekID" name="weekID" style="display:none">
+                        <input class="inputField" type="text" id="dateID" name="dateID" style="display:none">
                         <label>First Name</label>
                         <input class="inputField" type="text" id="fName" name="fName" required>
                         <label>Last Name</label>
@@ -244,6 +249,43 @@
                 </div>
                 </div>
             </form>
+        </div>
+    </section>
+    <section class="third">
+        <h1 id="myApp">Appointments</h1>
+        <div class="tableHeader">
+            <label>Name</label>
+            <label>Date Scheduled</label>
+            <label>Date Created</label>
+            <label>State</label>
+        </div>
+        <div class="table">
+            <?php
+
+                $sql = "SELECT * FROM `appointments`";
+
+                $result = mysqli_query($conn, $sql);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $name = $row['name'];
+                        $dateTime = $row['dateTime'];
+                        $date = $row['date'];
+                        $state = $row['state'];
+
+                        echo '
+                        <div class="tableContent">
+                            <label>'.$name.'</label>
+                            <label>'.$dateTime.'</label>
+                            <label>'.$date.'</label>
+                            <label class="'.$state.'" id="state">'.$state.'</label>
+                        </div>
+                        ';
+                    }
+                }
+            ?>
+        <div>
+            
         </div>
     </section>
     <script src="js/nav.js"></script>
