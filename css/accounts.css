@@ -18,7 +18,7 @@ body::-webkit-scrollbar{
 }
 .usernameCol .username:hover{
     transition: 0.3s;
-    color: #72EF36;
+    margin-right: 0.5rem;
 }
 .accountsCon{
     width: 100%;
@@ -31,8 +31,8 @@ body::-webkit-scrollbar{
     width: 10%;
     border-radius: 35px;
     padding: 20px 20px 20px 10px;
-    box-shadow: 10px 15px 15px black;
-    background-color: #3B3141;
+    box-shadow: 10px 15px 15px #3B3141;
+    background-color: #810CA8;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -51,9 +51,9 @@ body::-webkit-scrollbar{
 .detailsCol{
     width: 53%;
     border-radius: 35px;
-    padding: 20px 10px 20px 10px;
-    box-shadow: 10px 15px 15px black;
-    background-color: #3B3141;
+    padding: 3rem 2rem 3rem 2rem;
+    box-shadow: 10px 15px 15px #3B3141;
+    background-color: #810CA8;
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
@@ -61,6 +61,7 @@ body::-webkit-scrollbar{
 .firstCon{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .imageCon {
     display: flex;
@@ -83,8 +84,8 @@ body::-webkit-scrollbar{
 }
 #profileLabel:hover{
     transition: 0.3s;
-    border: 1px solid #72EF36;
-    color: #72EF36;
+    border: 1px solid #3B3141;
+    color: #3B3141;
 }
 #profilePreview{
     height: 270px;
@@ -96,8 +97,10 @@ body::-webkit-scrollbar{
     margin-left: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .detailsCon input{
+    height: 1.5rem;
     width: 180px;
     margin-bottom: 10px;
     border-radius: 25px;
@@ -118,7 +121,7 @@ body::-webkit-scrollbar{
 .buttonsCol i{
     font-size: 2.5rem;
     margin-bottom: 25px;
-    color: #72EF36;
+    color: #3B3141;
     display: flex;
     align-items: center;
     justify-content: center;

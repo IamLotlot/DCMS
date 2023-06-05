@@ -9,10 +9,11 @@ include "db_conn.php";
     <ul class="ulLeft">
         <li id="homNav" title="Go to home page" ><a href="home.php">Home</a></li>
         <li id="appNav" title="Go to appointment page"><a href="appointment.php">Appointment</a></li>
-        <li id="creNav" title="Go to creators page"><a href="#">Creators</a></li>
+        <li id="creNav" title="Go to creators page"><a href="creators.php">Creators</a></li>
         <!-- Admin Navs -->
-        <li id="accNav" title="Go to accounts page"><a href="#">Accounts</a></li>
-        <li id="logNav" title="Go to logs page"><a href="#">Logs</a></li>
+        <li id="appsNav" title="Go to appointments page"><a href="appointments.php">Appointments</a></li>
+        <li id="accNav" title="Go to accounts page"><a href="accounts.php">Accounts</a></li>
+        <li id="logNav" title="Go to logs page"><a href="logs.php">Logs</a></li>
     </ul>
     <ul class="ulRight">
         <li id="signNav" title="Go to account page"><a href="sign.php">Account</a></li>

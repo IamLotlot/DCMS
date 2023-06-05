@@ -7,6 +7,7 @@ function onStart(){
     var app = document.getElementById("appNav");
     var cre = document.getElementById("creNav");
 
+    var apps = document.getElementById("appsNav");
     var acc = document.getElementById("accNav");
     var log = document.getElementById("logNav");
 
@@ -21,6 +22,7 @@ function onStart(){
           app.style.display = "none";
           cre.style.display = "none";
 
+          apps.style.display = "flex";
           acc.style.display = "flex";
           log.style.display = "flex";
   
@@ -33,6 +35,7 @@ function onStart(){
           app.style.display = "flex";
           cre.style.display = "flex";
 
+          apps.style.display = "none";
           acc.style.display = "none";
           log.style.display = "none";
   
@@ -43,6 +46,7 @@ function onStart(){
         }
       } else {
   
+        apps.style.display = "none";
         acc.style.display = "none";
         log.style.display = "none";
 

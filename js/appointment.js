@@ -214,7 +214,11 @@ var position = document.getElementById("position");
 var checkboxes = document.querySelectorAll(".checkboxes");
 
 cancel.addEventListener('click', () => {
-  cancelApp();
+  var result = confirm("Are you sure you want to remove the current appointment?");
+
+  if (result) {
+    cancelApp();
+  }
 });
 
 function cancelApp() {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 08:35 PM
+-- Generation Time: Jun 05, 2023 at 02:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -45,8 +45,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`username`, `email`, `password`, `role`, `fullname`, `address`, `contact`, `age`, `sex`, `profilePic`) VALUES
-('user1', 'user1@gmail.com', 'user1', 'user', '', '', '', '', '', ''),
-('admin', 'admin@gmail.com', 'admin', 'admin', '', '', '', '', '', '');
+('admin', 'admin@gmail.com', 'admin', 'admin', '', '', '', '', '', ''),
+('user', 'user@gmail.com', 'user', 'user', 'user', 'user', '123', '123', 'user', 0x757365725f50726f66696c652d506963747572652e6a7067);
 
 -- --------------------------------------------------------
 
@@ -63,6 +63,13 @@ CREATE TABLE `appointments` (
   `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`id`, `name`, `position`, `service`, `dateTime`, `date`) VALUES
+('', 'qweqwe qweqwe qwweqwwe', '(top right first molar)(top left first premolar)', 'General ', 'Wednesday 10AM-11AM', 'Jun-05-2023');
+
 -- --------------------------------------------------------
 
 --
@@ -73,10 +80,17 @@ CREATE TABLE `log` (
   `name` varchar(255) NOT NULL,
   `position` varchar(255) NOT NULL,
   `service` varchar(255) NOT NULL,
-  `dateTime` varchar(255) NOT NULL,
-  `date` varchar(255) NOT NULL,
+  `dateCreated` varchar(255) NOT NULL,
+  `dateEnd` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`name`, `position`, `service`, `dateCreated`, `dateEnd`, `state`) VALUES
+('Juan Pollen Luna', 'upper left canine', 'General', 'Jun-05-2023', 'Jun-05-2023', 'Success');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

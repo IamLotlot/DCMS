@@ -1,0 +1,77 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #ffffff;
+}
+body::-webkit-scrollbar{
+    width: 0;
+}
+section{
+    height: 70vh;
+    width: 100%;
+    padding: 5rem 0 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.tableHeader{
+    width: 78%;
+    padding: 0 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid #F0ECE6;
+}
+.table{
+    width: 80%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #810CA8;
+    overflow: auto;
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tableHeader label{
+    width: 15%;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    border-radius: 1rem;
+    background-color: #F0ECE6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tableContent{
+    padding: 1rem 1rem 0.3rem 1rem;
+    border-bottom: 0.1rem solid #F0ECE6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.tableContent label{
+    width: 15%;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    border-radius: 1rem;
+    color: #F0ECE6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons{
+    padding: 0.5rem;
+}
+#confirmBtn{
+    background-color: #72EF36;
+}
+#denyBtn{
+    background-color: #ff1717;
+    
+}
